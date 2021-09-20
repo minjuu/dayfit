@@ -13,6 +13,42 @@
   }
 }
 
+.jumbotron {
+  height: 236px;
+  background-image: url('./background.jpg');
+  background-size: cover;
+  color:white;
+  margin-bottom: 3%;
+}
+.titleDes {
+  padding-bottom: 7px;
+}
+.description {
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+.description2 {
+  font-size: 13px;
+  padding-bottom: 25px;
+}
+.box {
+  padding-top: 41px;
+  text-align: left;
+  padding-left: 7%;
+}
+.box2 {
+  padding: 4%;
+}
+a, b {
+  padding-top: 4px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: smaller;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
