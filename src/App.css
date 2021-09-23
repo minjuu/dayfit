@@ -37,7 +37,8 @@
   padding-left: 7%;
 }
 .box2 {
-  padding: 4%;
+  display: inline-block;
+  width: 90%;
 }
 a, b {
   padding-top: 4px;

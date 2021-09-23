@@ -5,10 +5,65 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom'
+
+import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
+import axios from 'axios';
+
+let alert초기값 = true;
+
+let 초기값 = [
+  { id : 0, name : 'MD추천 포근 4계절 가디건', quan : 2},
+  { id : 1, name : '[Best] 아이폰 투명 케이스', quan : 1}
+];
+
+function reducer(state = 초기값, 액션){
+  if ( 액션.type === '항목추가' ){
+
+    let found = state.findIndex((a)=>{return a.id === 액션.payload.id});
+
+    if(found >= 0){
+      let copy = [...state];
+      copy[found].quan++;
+      return copy
+    }
+    else{
+      let copy = [...state];
+      copy.push(액션.payload);
+      return copy
+    }
+  }
+  if (액션.type === '수량증가'){
+    let copy = [...state];
+    copy[액션.data].quan++;
+    return copy
+  }
+  else if (액션.type === '수량감소'){
+    let copy2 = [...state];
+    if(copy2[액션.data].quan > 0){
+      copy2[액션.data].quan--;
+    }
+    return copy2
+  }
+  else{
+    return state 
+  }
+}
+
+function reducer2(state = alert초기값, 액션){
+  if(액션.type === '닫기')
+    return false
+  return state 
+}
+
+let store = createStore(combineReducers({reducer,reducer2}));
+
 ReactDOM.render(
   <React.StrictMode>
   <BrowserRouter>
+  <Provider store = {store}>
     <App />
+  </Provider>
   </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

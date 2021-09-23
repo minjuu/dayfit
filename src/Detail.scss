@@ -1,14 +1,23 @@
 $메인컬러 : #ff0000;
 
+.wow-enter {
+    opacity: 0;
+}
+
+.wow-enter-active {
+    opacity: 1;
+    transition: all 500ms;
+}
+
 .red {
     color : $메인컬러;
 }
 
 @mixin 함수() {
-    background-color: #eeeeee;
+    background-color: #ffe591;
     padding: 20px;
     border-radius: 5px;
-    max-width: 100%;
+    max-width: 95%;
     width: 100%;
     margin: auto;
 }
@@ -18,13 +27,19 @@ $메인컬러 : #ff0000;
 }
 .my-alert2 {
     @extend .my-alert;
-    background: #ffe591;
+    background: #c7c7c7;
 }
 
 
 
 .my-alert p {
     margin-bottom: 0;
+}
+
+.x_btn {
+    background-color: transparent;
+    border: transparent;
+    float: right;
 }
 // div.container h4 {
 //     color : blue;

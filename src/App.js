@@ -1,11 +1,14 @@
 /* eslint-disable*/
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, lazy, Suspense} from 'react';
 import { Navbar,Container,Nav,NavDropdown,Button } from 'react-bootstrap';
 import './App.css';
 import Data from './data.js';
-import Detail from './Detail.js';
+// import Detail from './Detail.js';
+let Detail = lazy(()=> import('./Detail.js'))
 import axios from 'axios'
-import { Link, Route, Switch } from 'react-router-dom'
+import { useHistory, Link, Route, Switch } from 'react-router-dom'
+
+import Cart from './Cart.js';
 
 export let 재고context = React.createContext();
 
@@ -23,9 +26,9 @@ function App() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to = "/detail">Detail</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <Nav.Link as={Link} to = "/detail/1">Detail</Nav.Link>
+            <NavDropdown title="My Page" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to = "/cart">Cart</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -93,7 +96,13 @@ function App() {
       </Route>
 
       <Route path="/detail/:id">
-        <Detail clothes = {clothes} 재고 = {재고} 재고변경 = {재고변경}></Detail>
+        <Suspense fallback={<div>로딩중 ...</div>}>
+          <Detail clothes = {clothes} 재고 = {재고} 재고변경 = {재고변경}></Detail>
+        </Suspense>
+      </Route>
+
+      <Route path="/cart">
+        <Cart></Cart>
       </Route>
 
       {/* <Route path = "/어쩌구" component={Modal} ></Route> */}
@@ -112,12 +121,13 @@ export default App;
 
 function Info(props){
   let 재고 = useContext(재고context);
+  let history = useHistory();
   return(
-    <div className="col-md-3" key={props.i}>
+    <div className="col-md-3" key={props.i} onClick={()=>{ history.push('/detail/'+ (props.clothes.id)) }}>
               <img src = {'/img/product'+props.clothes.id+'.JPG'} width="100%"/><br/>
               <a>{props.clothes.title}</a>
               <b>{props.clothes.price}</b>
-              {재고[props.i]}
+              {/* {재고[props.i]} */}
               <br/>
             </div>
             

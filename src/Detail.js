@@ -6,6 +6,10 @@ import './Detail.scss';
 import axios from 'axios';
 import {재고context} from './App.js'
 
+import { CSSTransition } from "react-transition-group"
+
+import { connect } from 'react-redux'
+
 let 박스 = styled.p`
   padding-top : 30px;
 `;
@@ -22,6 +26,9 @@ function Detail(props){
 
   let [alert, alert변경] = useState(true);
   let [inputData, inputData변경] = useState('');
+  let [누른탭, 누른탭변경] = useState(0);
+  let [스위치, 스위치변경] = useState(false);
+
   let 재고 = useContext(재고context)
 
   useEffect(()=>{
@@ -68,15 +75,53 @@ function Detail(props){
             <Info 재고 = {props.재고} ></Info>
             <hr />
 
-            <Button variant="dark" onClick={()=>{props.재고변경([1,1,1,1,1,1,1,1])}}>주문하기</Button> <t />
+            <Button variant="dark" onClick={()=>{
+              
+              props.재고변경([1,1,1,1,1,1,1,1])
+              props.dispatch({type : '항목추가', payload : {id:찾은상품.id, name : 찾은상품.title, quan : 1}})
+              history.push('/cart');
+
+              }}>주문하기</Button> <t />
             <Button variant="success">N pay 주문</Button> 
 
+          </div>
         </div>
-    </div>
-    </div>
+
+        <Nav className="mt-5" variant="tabs" defaultActiveKey="linjk-0">
+          <Nav.Item>
+            <Nav.Link eventKey="link-0" onClick={()=>{ 스위치변경(false); 누른탭변경(0) }}>Active</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-1" onClick={()=>{ 스위치변경(false); 누른탭변경(1) }}>Option 2</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-2" onClick={()=>{ 스위치변경(false); 누른탭변경(2) }}>Option 3</Nav.Link>
+          </Nav.Item>
+        </Nav>
+
+        <CSSTransition in={true} className="wow" timeout={500}>
+          <TabContent 누른탭 = {누른탭} 스위치변경 = {스위치변경}/>
+        </CSSTransition>
+      </div>
     )
   }
 
+  function TabContent(props){
+    useEffect(()=>{
+      props.스위치변경(true);
+    })
+
+    if(props.누른탭 === 0){
+      return <div>0번째</div>
+    }
+    else if(props.누른탭 === 1){
+      return <div>1번째</div>
+    }
+    else if(props.누른탭 === 2){
+      return <div>2번째</div>
+    }
+    
+  }
 
   function Info(props) {
     return (
@@ -84,4 +129,13 @@ function Detail(props){
     )
   }
 
-  export default Detail;
+
+  function stateToprops(state) {
+    return {
+        state : state.reducer,
+        alertOpen : state.reducer2
+    }
+
+}
+
+export default connect(stateToprops)(Detail)
