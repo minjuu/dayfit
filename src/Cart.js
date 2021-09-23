@@ -1,7 +1,8 @@
 import React, { useEffect, memo } from 'react';
 import {Table} from 'react-bootstrap'
 import { connect, useDispatch, useSelector } from 'react-redux';
-
+import { useHistory, Link, Route, Switch } from 'react-router-dom'
+import './Detail.scss';
 function Cart(props){
 
     let state = useSelector((state) => state);
@@ -9,10 +10,12 @@ function Cart(props){
 
     return (
         <div>
+        <br/>
+          <h5 className="left2"><b>장바구니</b></h5> <hr/><br/>
             <Table responsive="sm">
-                <thead>
+                <thead className="theadd">
                 <tr>
-                    <th>#</th>
+                    <th>No.</th>
                     <th>상품명</th>
                     <th>수량</th>
                     <th>변경</th>
@@ -43,29 +46,16 @@ function Cart(props){
                 )
              : null
             }
-            <Parent 이름 = "강민주  " 나이="24"/>
+            <br/><br/>
+            <Link to="/order">
+              <button className="pay"> 주문하기 </button> 
+            </Link>
 
         </div>
     )
 }
 
-function Parent(props){
-    return (
-      <div>
-        <Child1 이름={props.이름} />
-        <Child2 나이={props.나이} />
-      </div>
-    )
-  }
   
-  function Child1(){
-    useEffect( ()=>{ console.log('렌더링됨1') } );
-    return <div>1111</div>
-  }
-  let Child2 = memo(function(){
-    useEffect( ()=>{ console.log('렌더링됨2') } );
-    return <div>2222</div>
-  });
 
 // function stateToprops(state) {
 //     return {

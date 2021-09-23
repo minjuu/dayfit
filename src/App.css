@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
 .App {
   text-align: center;
 }
@@ -5,6 +8,10 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.logo{
+  height: 5vmin;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -19,6 +26,7 @@
   background-size: cover;
   color:white;
   margin-bottom: 3%;
+  font-family: 'nanumsquare';
 }
 .titleDes {
   padding-bottom: 7px;
@@ -40,15 +48,43 @@
   display: inline-block;
   width: 90%;
 }
-a, b {
-  padding-top: 4px;
+.clothtitle  {
+  margin-top: 4px;
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: smaller;
+  font-size: 13px;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
+.best {
+  color: white;
+  font-size: 13px;
+  background-color: rgb(43, 43, 43);
+}
+
+.best2 {
+  color: white;
+  font-size: 13px;
+  background-color: rgb(126, 126, 126);
+}
+
+.btnmore {
+  width:60px;
+  height: 35px;
+  margin-top: 7px;
+  border-radius: 5px;
+  border:1.5px solid rgb(175, 175, 175);
+  background-color:rgb(175, 175, 175);
+  border-color: rgb(175, 175, 175);
+  color: white;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.theadd {
+  border-bottom: lightgray;
+}
 
 .App-header {
   background-color: #282c34;

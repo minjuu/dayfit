@@ -1,0 +1,67 @@
+$메인컬러 : #ff0000;
+
+.des {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: larger;
+}
+
+.id, .pw {
+    font-family: 'Nanum Gothic', sans-serif;
+    width: 350px;
+    height: 35px;
+    border-radius: 7px;
+    border:1.5px solid lightgrey;
+    margin-bottom: 15px;
+}
+.id::placeholder, .pw::placeholder{
+    font-size: smaller;
+    color:rgb(201, 201, 201);
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.signin{
+    width:350px;
+    height: 35px;
+    margin-top: 7px;
+    border-radius: 5px;
+    background-color: black;
+    border-color: black;
+    color: white;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.signin2{
+    @extend .signin;
+    background-color: #2DB400;
+    border-color: #2DB400;
+    border:1.5px solid #2DB400;
+}
+
+.signin3{
+    @extend .signin;
+    background-color: #f9e000;
+    border-color: #f9e000;
+    border:1.5px solid #f9e000;
+    color:black;
+}
+
+.findidpw, .signup{
+    border:1.5px solid transparent;
+    background-color: transparent;
+}
+
+.ic{
+    width: 8%;
+}
+
+hr {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #bbb inset;
+    margin: auto;
+}
+
+.logo2{
+    height: 8vmin;
+  }
+  

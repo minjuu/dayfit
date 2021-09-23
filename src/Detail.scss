@@ -1,4 +1,6 @@
 $메인컬러 : #ff0000;
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
 
 .wow-enter {
     opacity: 0;
@@ -13,6 +15,12 @@ $메인컬러 : #ff0000;
     color : $메인컬러;
 }
 
+
+.black {
+    color: #000;
+    font-family: nanumsquare;
+    font-size: 15px;
+}
 @mixin 함수() {
     background-color: #ffe591;
     padding: 20px;
@@ -22,6 +30,10 @@ $메인컬러 : #ff0000;
     margin: auto;
 }
 
+.mt-5 {
+    float: center;
+}
+
 .my-alert {
     @include 함수()
 }
@@ -29,8 +41,43 @@ $메인컬러 : #ff0000;
     @extend .my-alert;
     background: #c7c7c7;
 }
+#bootstrap-overrides { /* 중요성 점수: 100+1=101 */
+    color: black;
+  }
+.Nav.Link {
+    color: black;
+}
 
-
+.pay {
+    width:100px;
+    height: 38px;
+    margin-top: 7px;
+    border-radius: 5px;
+    background-color: black;
+    border:1.5px solid black;
+    color: white;
+}
+.price {
+    margin-right: 80px;
+}
+.desc {
+    margin-right: 70px;
+    font-size: 13px;
+}
+.left {
+    text-align: left;
+    font-family: nanumsquare;
+}
+.left2 {
+    text-align: left;
+    margin-left: 50px;
+    font-family: nanumsquare;
+}
+.npay {
+    @extend .pay;
+    background-color: #2DB400;
+    border:1.5px solid #2DB400;
+}
 
 .my-alert p {
     margin-bottom: 0;

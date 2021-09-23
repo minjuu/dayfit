@@ -9,6 +9,8 @@ import axios from 'axios'
 import { useHistory, Link, Route, Switch } from 'react-router-dom'
 
 import Cart from './Cart.js';
+import Login from './Login.js';
+import Order from './Order.js';
 
 export let 재고context = React.createContext();
 
@@ -21,7 +23,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" expand="lg">
       <Container>
-        <b><Navbar.Brand as={Link} to="/">d a y f i t</Navbar.Brand></b>
+      <b><Navbar.Brand as={Link} to="/"><img className="logo" src = {'/img/logo.png'} />&nbsp;&nbsp;d a y f i t</Navbar.Brand></b>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -29,10 +31,8 @@ function App() {
             <Nav.Link as={Link} to = "/detail/1">Detail</Nav.Link>
             <NavDropdown title="My Page" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to = "/cart">Cart</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to = "/login">Log in</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -76,7 +76,7 @@ function App() {
 
             </재고context.Provider>
 
-            <button className="btn btn-primary" onClick={()=>{
+            <button className="btnmore" onClick={()=>{
 
               axios.post('서버url', {id: 'dd', pw : 1234 })
               
@@ -89,7 +89,7 @@ function App() {
                 console.log("실패!")
               })
 
-            }}>더보기</button>
+            }}>more</button>
 
           </div>
         </div>
@@ -103,6 +103,14 @@ function App() {
 
       <Route path="/cart">
         <Cart></Cart>
+      </Route>
+
+      <Route path="/login">
+        <Login></Login>
+      </Route>
+
+      <Route path="/order">
+        <Order clothes = {clothes} 재고 = {재고} 재고변경 = {재고변경}></Order>
       </Route>
 
       {/* <Route path = "/어쩌구" component={Modal} ></Route> */}
@@ -125,8 +133,8 @@ function Info(props){
   return(
     <div className="col-md-3" key={props.i} onClick={()=>{ history.push('/detail/'+ (props.clothes.id)) }}>
               <img src = {'/img/product'+props.clothes.id+'.JPG'} width="100%"/><br/>
-              <a>{props.clothes.title}</a>
-              <b>{props.clothes.price}</b>
+              <h6 className="clothtitle">{props.clothes.title}</h6>
+              <b className="clothtitle"><b className="best">&nbsp;BEST&nbsp;</b>&nbsp;&nbsp;&nbsp;{props.clothes.price}</b>
               {/* {재고[props.i]} */}
               <br/>
             </div>
