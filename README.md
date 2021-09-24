@@ -20,11 +20,11 @@
 
   <p>
     <img src="https://user-images.githubusercontent.com/57933061/134640740-e9e40988-bc4c-462f-8a0b-c87877d524a0.JPG" width="800" float = "center">
-  </p>
+  </p><br>
   <p>
     <img src="https://user-images.githubusercontent.com/57933061/134640836-c6414f19-68aa-4d8b-a02e-1ebf16f8432b.JPG" width="800" float = "center">
   </p>
-  - 로그인 페이지
+- 로그인 페이지
   </p>
    <img src="https://user-images.githubusercontent.com/57933061/134641337-d66f4bf6-3206-461b-bb41-45e4558d9c07.JPG" width="800" float = "center">
   </p>
