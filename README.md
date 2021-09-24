@@ -52,8 +52,9 @@
   <p>
     <img src="https://user-images.githubusercontent.com/57933061/134641043-8b0d560a-9089-4ac5-9c27-11931ce585dc.JPG" width="800" float = "center">
   </p>
-   <img src="https://user-images.githubusercontent.com/57933061/134641088-8a24c89b-7fa8-4ecd-8e3f-b7f51eaaf9e7.JPG" width="800" float = "center">
+   <img src="https://user-images.githubusercontent.com/57933061/134642573-d957e030-4879-4ad3-b8c7-ceecb2c15864.JPG" width="800" float = "center">
   </p>
+
 - Cart 페이지
   </p>
    <img src="https://user-images.githubusercontent.com/57933061/134641155-a174ab17-f8fa-448e-b0ef-20559abd6d23.JPG" width="800" float = "center">
