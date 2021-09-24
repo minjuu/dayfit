@@ -9,10 +9,10 @@
 
 - html / css /javascript
 - react
-- Visual Studio Code
 - redux
 - sass
 - bootstrap
+- Visual Studio Code
 - (Ajax 요청 시 axios 사용)<br>
 
 
