@@ -80,7 +80,7 @@
 
 ------
 
-https://github.com/minjuu/shop.git
+https://github.com/minjuu/dayfit.git
 
 
 
