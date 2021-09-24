@@ -1,6 +1,11 @@
 $메인컬러 : #ff0000;
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
-
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .wow-enter {
     opacity: 0;
@@ -49,7 +54,7 @@ $메인컬러 : #ff0000;
 }
 
 .pay {
-    width:100px;
+    width:140px;
     height: 38px;
     margin-top: 7px;
     border-radius: 5px;
@@ -72,6 +77,12 @@ $메인컬러 : #ff0000;
     text-align: left;
     margin-left: 50px;
     font-family: nanumsquare;
+}
+.left3 {
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: nanumsquare;
+    font-weight: bold;
 }
 .npay {
     @extend .pay;

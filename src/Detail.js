@@ -71,15 +71,15 @@ function Detail(props){
             <p className="desc"><r className="desc">배송비&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</r>무료</p>
             <Info 재고 = {props.재고} ></Info>
             </div>
-            <hr /><br/><br/>
+            <hr /><br/>
 
             <button className="pay" onClick={()=>{
               
               props.재고변경([1,1,1,1,1,1,1,1])
-              props.dispatch({type : '항목추가', payload : {id:찾은상품.id, name : 찾은상품.title, quan : 1}})
+              props.dispatch({type : '항목추가', payload : {id:찾은상품.id, name : 찾은상품.title, quan : 1, price : 찾은상품.price2}})
               history.push('/cart');
 
-              }}>주문하기</button> <t />
+              }}>장바구니 / 주문</button> <t />
             <button className="npay"><b>N</b> pay 주문</button> 
 
           </div>

@@ -12,10 +12,7 @@ import axios from 'axios';
 
 let alert초기값 = true;
 
-let 초기값 = [
-  { id : 0, name : 'MD추천 포근 4계절 가디건', quan : 2},
-  { id : 1, name : '[Best] 아이폰 투명 케이스', quan : 1}
-];
+let 초기값 = [];
 
 function reducer(state = 초기값, 액션){
   if ( 액션.type === '항목추가' ){
@@ -35,13 +32,13 @@ function reducer(state = 초기값, 액션){
   }
   if (액션.type === '수량증가'){
     let copy = [...state];
-    copy[액션.data].quan++;
+    copy[액션.data-1].quan++;
     return copy
   }
   else if (액션.type === '수량감소'){
     let copy2 = [...state];
-    if(copy2[액션.data].quan > 0){
-      copy2[액션.data].quan--;
+    if(copy2[액션.data-1].quan > 0){
+      copy2[액션.data-1].quan--;
     }
     return copy2
   }

@@ -12,7 +12,7 @@ function Cart(props){
         <div>
         <br/>
           <h5 className="left2"><b>장바구니</b></h5> <hr/><br/>
-            <Table responsive="sm">
+            <Table responsive="sm" className="fontst">
                 <thead className="theadd">
                 <tr>
                     <th>No.</th>
@@ -29,8 +29,8 @@ function Cart(props){
                                 <td>{a.id}</td>
                                 <td>{ a.name }</td>
                                 <td>{a.quan}</td>
-                                <td><button onClick={()=>{dispatch({type :'수량증가', data : a.id})}}>+</button>&nbsp;
-                                <button onClick={()=>{dispatch({type:'수량감소', data: a.id})}}>-</button></td>
+                                <td><button className="btn1" onClick={()=>{dispatch({type :'수량증가', data : a.id})}}><b>+</b></button>&nbsp;
+                                <button className="btn1" onClick={()=>{dispatch({type:'수량감소', data: a.id})}}><b>-</b></button></td>
                             </tr>
                         )
                     })
@@ -40,7 +40,7 @@ function Cart(props){
 
             {state.reducer2 === true
              ?  (<div className="my-alert2">
-                    ✨지금 바로 구매 시 신규 할인 20%✨ 
+                    ✨일주일동안 매일 출석하면 20% 할인 쿠폰 제공✨ 
                     <button className="x_btn" onClick={()=>{dispatch({type:'닫기'})}}>X</button>
                 </div>
                 )
@@ -55,7 +55,9 @@ function Cart(props){
     )
 }
 
-  
+
+
+
 
 // function stateToprops(state) {
 //     return {

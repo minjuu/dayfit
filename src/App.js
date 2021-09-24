@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Navbar bg="light" expand="lg">
       <Container>
-      <b><Navbar.Brand as={Link} to="/"><img className="logo" src = {'/img/logo.png'} />&nbsp;&nbsp;d a y f i t</Navbar.Brand></b>
+      <b><Navbar.Brand as={Link} to="/">d a y f i t</Navbar.Brand></b>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -64,6 +64,7 @@ function App() {
 
             <재고context.Provider value={재고}>
 
+            <h5 class="left3"><b>오늘의 BEST 상품 모아보기</b></h5>
               <div className="row">
               {
                 clothes.map(function(clothes, i){
