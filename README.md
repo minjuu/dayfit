@@ -3,6 +3,18 @@
 ✔ 패션 이커머스 웹사이트 (with 리액트)<br>
 
 
+### 💫 개발환경
+
+------
+
+- html / css /javascript
+- react
+- Visual Studio Code
+- redux
+- sass
+- bootstrap
+- (Ajax 요청 시 axios 사용)
+
 
 ### ⏳ 제작기간
 
@@ -51,29 +63,7 @@
 <br>
 
   
-### 📌 주요기능
 
-------
-
-- **DB 내 다양한 영화 검색 가능**<br>데이터베이스에 저장된 다양한 영화를 검색할 수 있음<br>
-- **색감  및 날씨 API 기반 영화 감상**<br>색감과 날씨 API 정보를 기반으로 영화가 분류되어 사용자가 원하는 분위기의 영화를 감상할 수 있음<br>
-- **개발자 프로필의 문자 발송 기능**<br>문자 아이콘을 클릭하면 문자를 발송할 수 있음<br>
-
-
-
-
-
-
-### 💫 개발환경
-
-------
-
-- html / css /javascript
-- react
-- Visual Studio Code
-- redux
-- sass
-- bootstrap
 
 
 ### 😺 GitHub Repository
