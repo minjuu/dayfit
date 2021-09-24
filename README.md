@@ -59,7 +59,7 @@
   </p>
    <img src="https://user-images.githubusercontent.com/57933061/134641155-a174ab17-f8fa-448e-b0ef-20559abd6d23.JPG" width="800" float = "center">
   </p>
-  - 주문 페이지
+- 주문 페이지
   </p>
    <img src="https://user-images.githubusercontent.com/57933061/134641257-98317ec6-16c9-4bbb-8650-e3a22a3241c3.JPG" width="800" float = "center">
   </p>
