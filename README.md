@@ -1,6 +1,6 @@
 # dayfit
 
-✔ 패션 이커머스 웹 사이트 (with 리액트)<br>
+✔ 패션 이커머스 웹 사이트 (with 리액트)<br><br>
 
 
 ### 💫 개발환경
@@ -13,7 +13,7 @@
 - redux
 - sass
 - bootstrap
-- (Ajax 요청 시 axios 사용)
+- (Ajax 요청 시 axios 사용)<br>
 
 
 ### ⏳ 제작기간
